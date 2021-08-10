@@ -7,7 +7,7 @@ namespace Vehicles
 	// You cannot make a wheel except by using this constructor.
 	// Constructors have no return type;
 
-	Wheel::Wheel(double diameter)  //implement the constructor
+	Wheel::Wheel(int diameter)  //implement the constructor
 	{
 		// m_diameter is declared in the header "Wheel.hpp".  "m_" means "member".
 		// the parameter "diameter" is used to set the value of m_diameter.
@@ -19,7 +19,7 @@ namespace Vehicles
 	std::string Wheel::WheelReport()
 	{
 		std::string report = "Diameter: " + std::to_string(m_diameter) + "\n";
-		// note you must convert the double to a string to add it to another string as above.
+		// note you must convert the int to a string to add it to another string as above.
 		return report;
 	}
 

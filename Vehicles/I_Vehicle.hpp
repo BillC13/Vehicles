@@ -15,9 +15,11 @@ namespace Vehicles
 
 	protected:  // only I_Vehicle and classes derived from it (such as Car) can access these:
 		std::string m_name;
-		double m_length = 0;
-		double m_width  = 0;
-		double m_height = 0;
+		int m_length = 0;
+		int m_width  = 0;
+		int m_height = 0;
+		int m_weight = 0;
+		int m_wheel = 0;
 		int m_doors  = 0;
 		std::vector<Wheel> m_wheels;
 	};

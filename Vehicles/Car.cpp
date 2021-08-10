@@ -3,23 +3,23 @@
 
 namespace Vehicles
 {
-	Car::Car(std::string name, int doors, double wheeldiameter)  //names for the parameters are NOT optional here
+	Car::Car(std::string name, int doors, int wheels, int wheeldiameter)  //names for the parameters are NOT optional here
 	{
 		// hook up the name and number of doors to the private fields:
 		m_name = name;
 		m_doors = doors;
+		m_wheel = wheels;
 
-		// give the car 4 wheels:
-		// we will add them to the m_wheels vector declared in I_Vehicle
-		m_wheels.push_back(Wheel(wheeldiameter));  //create a wheel and add it to the vector of wheels
-		m_wheels.push_back(Wheel(wheeldiameter));
-		m_wheels.push_back(Wheel(wheeldiameter));
-		m_wheels.push_back(Wheel(wheeldiameter));
+		for (int i = 0; i < m_wheel; i++)
+		{
+			m_wheels.push_back(Wheel(wheeldiameter)); //create a wheel and add it to the vector of wheels
+		}
 
 		// give it a default size
 		m_length = 4000;
 		m_width  = 2000;
 		m_height = 1300;
+		m_weight = 1000;
 	}
 
 	Car::~Car()
@@ -33,10 +33,11 @@ namespace Vehicles
 		// this is just declaring a string then sequentially adding more to it:
 
 		std::string report = "This car is: " + m_name + "\n";
-		report += "  Length: " + std::to_string(m_length) + "\n";
-		report += "  Width:  " + std::to_string(m_width) + "\n";
-		report += "  Height: " + std::to_string(m_height) + "\n";
-		report += "  Height: " + std::to_string(m_height) + "\n";
+		report += "  It has " + std::to_string(m_doors) + " doors" + "\n";
+		report += "  Length: " + std::to_string(m_length) + " mm" + "\n";
+		report += "  Width:  " + std::to_string(m_width) + " mm" + "\n";
+		report += "  Height: " + std::to_string(m_height) + " mm" + "\n";
+		report += "  Weight: " + std::to_string(m_weight) + " kg" + "\n";
 		report += "  Number of wheels: " + std::to_string(m_wheels.size()) + "\n";
 		for (unsigned int i = 0; i < m_wheels.size(); i++)
 		{
