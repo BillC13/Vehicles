@@ -3,22 +3,23 @@
 
 #include <iostream>
 #include "Car.hpp"
+#include "Lorry.hpp"
 
 int main()
 {
     std::cout << "Hello World! Here are some vehicles!"  << std::endl;
 
     // conjour up vehicles:
-    Vehicles::Car car_tony = Vehicles::Car("Tony's Car", 4, 35);
+    Vehicles::Car car_bill = Vehicles::Car("Bill's Car", 4, 35);
 
     //TODO:
-    // Vehicles::Lorry lorry_tony = Vehicles::Lorry("Tony's Lorry", ..........
+    Vehicles::Lorry lorry_bill = Vehicles::Lorry("Bill's Lorry", 10, 315);
 
     // report on the vehicles:
-    std::cout << car_tony.VehicleReport() << std::endl;
+    std::cout << car_bill.VehicleReport() << std::endl;
 
     //TODO:
-    // std::cout << lorry_tony.VehicleReport() << std::endl;
+    std::cout << lorry_bill.VehicleReport() << std::endl;
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
