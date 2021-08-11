@@ -5,13 +5,12 @@ namespace Vehicles
 {
 	Lorry::Lorry(std::string name, int doors, int wheels, int wheeldiameter)  //names for the parameters are NOT optional here
 	{
-		// hook up the name and number of doors to the private fields:
+		// hook up the name and number of doors and wheels to the private fields:
 		m_name = name;
 		m_doors = doors;
 		m_wheel = wheels;
 
-		// give the Lorry 10 wheels:
-		// we will add them to the m_wheels vector declared in I_Vehicle
+		// cycle through the number of wheels in m_wheel to create the m_wheels vector
 		for (int i = 0; i < m_wheel; i++)
 		{
 			m_wheels.push_back(Wheel(wheeldiameter)); //create a wheel and add it to the vector of wheels
@@ -27,7 +26,7 @@ namespace Vehicles
 	Lorry::~Lorry()
 	{
 		// destructor, just for fun.  // This will run automatically when the program ends.
-		std::cout << m_name + " was sold to a Romanian people trafficker!" << std::endl;
+		std::cout << m_name + " was sold to a dodgy second hand dealer!" << std::endl;
 	}
 
 	std::string Lorry::VehicleReport()
