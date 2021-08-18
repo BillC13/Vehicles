@@ -1,2 +1,7 @@
-﻿  Workshop.cpp
-  Vehicles.vcxproj -> C:\Users\bill_\source\repos\Vehicles\Vehicles_DO_MKSH_Workshop\Vehicles\x64\Debug\Vehicles.exe
+﻿  Car.cpp
+  Lorry.cpp
+  Vehicles.cpp
+  Wheel.cpp
+  Workshop.cpp
+  Generating Code...
+  Vehicles.vcxproj -> C:\Users\bill_\source\repos\Vehicles\x64\Debug\Vehicles.exe

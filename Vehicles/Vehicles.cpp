@@ -51,10 +51,10 @@ void runProgram()
     // report on the vehicles:
     std::cout << P1->VehicleReport() << std::endl;
 
- 
-    std::cout << "Resetting the Car pointer" << std::endl;
+ /*
+    std::cout << "Resetting the Car pointer" << std::endl; Not any more!
     P1.reset();
-
+*/
     //Let us create and share several pointers to a lorry - this method will prevent uncertainty about releasing memory
    
     std::shared_ptr<Vehicles::Lorry> P3 = std::make_shared<Vehicles::Lorry>("Tony", 6, 700.6);
@@ -70,10 +70,17 @@ void runProgram()
     c.get_info();
 
     Vehicles::Workshop workshop;
+
+    
     // lines below commented out because it won't work with unique_ptr. Homework: Why?
-    // Cannot cast a unique pointer - doesn't have these functions available! Can swap it though.
-    //workshop.SetWorkingVehicle(P2);
-    //workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P2));
+    // Cannot cast a unique pointer - doesn't have these functions available
+    // P2 isn't there - has already been moved to P1, which was reset above anyway so doesn't point anywhere
+    // Plus SetworkingVehicle is currently set to work with shared pointers, not unique pointers
+    // Not resetting P1 (P2), and then moving it to P2a, which is a shared pointer and using that in functions below
+
+    std::shared_ptr<Vehicles::Car> P2a = std::move(P1);
+    workshop.SetWorkingVehicle(P2a);
+    workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P2a));
 
     workshop.SetWorkingVehicle(P3); // can accept a concrete class or an abstract one as below:
     workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P3));
