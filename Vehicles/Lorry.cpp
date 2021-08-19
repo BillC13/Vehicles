@@ -35,7 +35,7 @@ namespace Vehicles
 	{
 		// this is just declaring a string then sequentially adding more to it:
 
-		std::string report = " whose owner is: " + m_name + "\n";
+		std::string report = m_name + "'s lorry\n";
 		report += "  Length: " + std::to_string(m_length) + "\n";
 		report += "  Width:  " + std::to_string(m_width) + "\n";
 		report += "  Height: " + std::to_string(m_height) + "\n";
@@ -46,6 +46,21 @@ namespace Vehicles
 		}
 
 		return report;
+	}
+
+	void Lorry::SetNumWheels(int newNumWheels)
+	{
+		if (newNumWheels < 4)
+		{
+			std::cout << "Cannot fit less than 4 Wheels! Fitting 4 Wheels." << std::endl;
+			newNumWheels = 4;
+		}
+		double currentWheelDiameter = m_wheels[0].GetWheelDiameter(); //get diameter from first existing wheel
+		m_wheels.clear();
+		for (int i = 0; i < newNumWheels; i++)
+		{
+			m_wheels.push_back(Wheel(currentWheelDiameter)); //create a wheel and add it to the vector of wheels
+		}
 	}
 
 

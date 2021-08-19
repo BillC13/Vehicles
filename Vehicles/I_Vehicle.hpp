@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <iostream>
 #include "Wheel.hpp"
 
 namespace Vehicles
@@ -14,6 +15,10 @@ namespace Vehicles
 		virtual std::string VehicleReport() = 0; // you need the "= 0" for virtual functions.
 		virtual ~I_Vehicle() { 
 			std::cout << "Base Class I_Vehicle has been destroyed - NO MEMORY LEAKS!!" << std::endl; }
+		void ReplaceWheels(double);
+		void RaiseSuspension(double);
+		void GoFasterStripes(bool);
+
 	protected:  // only I_Vehicle and classes derived from it (such as Car) can access these:
 		std::string m_name;
 		double m_length = 0;
