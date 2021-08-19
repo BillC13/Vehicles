@@ -37,10 +37,7 @@ namespace Vehicles
 		report += "  Width:  " + std::to_string(m_width) + "\n";
 		report += "  Height: " + std::to_string(m_height) + "\n";
 		report += "  Number of wheels: " + std::to_string(m_wheels.size()) + "\n";
-		for (unsigned int i = 0; i < m_wheels.size(); i++)
-		{
-			report += "  #" + std::to_string(i + 1) + ": " + m_wheels[i].WheelReport();
-		}
+		report += "  Wheel " + m_wheels[0].WheelReport();
 
 		return report;
 	}

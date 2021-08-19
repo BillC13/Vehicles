@@ -44,27 +44,22 @@ void Vehicles::Workshop::ChangeNumberOfDoors(int newNumDoors)
 
 	if (WorkingVehicleIsLorry())
 	{
-		std::cout << "Cannot change the number of doors on a Lorry!" << std::endl;
+		std::cout << "Cannot change the number of doors on a Lorry! No work carried out." << std::endl;
 	}
 	else if (WorkingVehicleIsCar())
 	{
 		std::shared_ptr<Vehicles::Car> car = std::dynamic_pointer_cast<Vehicles::Car>(m_WorkingVehicle);
 		car->SetNumDoors(newNumDoors);
-
+		std::cout << "Vehicle Report following work order:" << std::endl;
+		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
 	}
 	else if (WorkingVehicleIsBike())
 	{
-		std::cout << "There aren't any doors on a bike!" << std::endl;
+		std::cout << "There aren't any doors on a bike! No work carried out." << std::endl;
 	}
-	else
+	else if (m_WorkingVehicle)
 	{
 		std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
-	}
-
-	if (m_WorkingVehicle) 
-	{
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
 	}
 	else   // Workshop is empty
 	{
@@ -80,26 +75,24 @@ void Vehicles::Workshop::ChangeNumberOfWheels(int newNumWheels)
 	{
 		std::shared_ptr<Vehicles::Lorry> lorry = std::dynamic_pointer_cast<Vehicles::Lorry>(m_WorkingVehicle);
 		lorry->SetNumWheels(newNumWheels);
+		std::cout << "Vehicle Report following work order:" << std::endl;
+		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
 	}
 	else if (WorkingVehicleIsCar())
 	{
-		std::cout << "Cannot change the number of wheels on a Car!" << std::endl;
+		std::cout << "Cannot change the number of wheels on a Car! No work carried out." << std::endl;
 
 	}
 	else if (WorkingVehicleIsBike())
 	{
 		std::shared_ptr<Vehicles::Bike> bike = std::dynamic_pointer_cast<Vehicles::Bike>(m_WorkingVehicle);
 		bike->SetNumWheels(newNumWheels);
-	}
-	else
-	{
-		std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
-	}
-
-	if (m_WorkingVehicle)
-	{
 		std::cout << "Vehicle Report following work order:" << std::endl;
 		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
+	}
+	else if (m_WorkingVehicle)
+	{
+		std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
 	}
 	else   // Workshop is empty
 	{

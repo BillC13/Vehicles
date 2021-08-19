@@ -24,6 +24,7 @@ namespace Vehicles
 		double m_length = 0;
 		double m_width  = 0;
 		double m_height = 0;
+		double d_wheel = 0;
 		int m_doors  = 0;
 		std::vector<Wheel> m_wheels;
 	};
