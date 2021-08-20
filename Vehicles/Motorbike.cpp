@@ -55,6 +55,13 @@ namespace Vehicles
 		{
 			m_wheels.push_back(Wheel(currentWheelDiameter)); //create a wheel and add it to the vector of wheels
 		}
+		std::cout << "Vehicle Report following work order:" << std::endl;
+		std::cout << VehicleReport() << std::endl;
+	}
+
+	void Bike::SetNumDoors(int newNumDoors)
+	{
+		std::cout << "There are no doors on a motorbike! No work carried out." << std::endl;
 	}
 }
 

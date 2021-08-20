@@ -1,9 +1,2 @@
 ﻿  Car.cpp
-  I_Vehicle.cpp
-  Lorry.cpp
-  Motorbike.cpp
-  Vehicles.cpp
-  Wheel.cpp
-  Workshop.cpp
-  Generating Code...
   Vehicles.vcxproj -> C:\Users\bill_\source\repos\Vehicles\x64\Debug\Vehicles.exe

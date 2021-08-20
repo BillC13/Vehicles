@@ -41,95 +41,47 @@ void Vehicles::Workshop::SetWorkingVehicle(std::shared_ptr<Vehicles::I_Vehicle> 
 void Vehicles::Workshop::ChangeNumberOfDoors(int newNumDoors)
 {
 	std::cout << "Attempting to change the number of DOORS..." << std::endl;
-
-	if (WorkingVehicleIsLorry())
-	{
-		std::cout << "Cannot change the number of doors on a Lorry! No work carried out." << std::endl;
-	}
-	else if (WorkingVehicleIsCar())
-	{
-		std::shared_ptr<Vehicles::Car> car = std::dynamic_pointer_cast<Vehicles::Car>(m_WorkingVehicle);
-		car->SetNumDoors(newNumDoors);
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
-	}
-	else if (WorkingVehicleIsBike())
-	{
-		std::cout << "There aren't any doors on a bike! No work carried out." << std::endl;
-	}
-	else if (m_WorkingVehicle)
-	{
-		std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
-	}
-	else   // Workshop is empty
-	{
+	if (!m_WorkingVehicle) {
 		std::cout << "No Vehicle in Workshop" << std::endl;
+		return;
 	}
+	m_WorkingVehicle->SetNumDoors(newNumDoors);
 }
 
 void Vehicles::Workshop::ChangeNumberOfWheels(int newNumWheels)
 {
 	std::cout << "Attempting to change the number of WHEELS..." << std::endl;
-
-	if (WorkingVehicleIsLorry())
-	{
-		std::shared_ptr<Vehicles::Lorry> lorry = std::dynamic_pointer_cast<Vehicles::Lorry>(m_WorkingVehicle);
-		lorry->SetNumWheels(newNumWheels);
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
-	}
-	else if (WorkingVehicleIsCar())
-	{
-		std::cout << "Cannot change the number of wheels on a Car! No work carried out." << std::endl;
-
-	}
-	else if (WorkingVehicleIsBike())
-	{
-		std::shared_ptr<Vehicles::Bike> bike = std::dynamic_pointer_cast<Vehicles::Bike>(m_WorkingVehicle);
-		bike->SetNumWheels(newNumWheels);
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
-	}
-	else if (m_WorkingVehicle)
-	{
-		std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
-	}
-	else   // Workshop is empty
-	{
+	if (!m_WorkingVehicle) {
 		std::cout << "No Vehicle in Workshop" << std::endl;
+		return;
 	}
+	m_WorkingVehicle->SetNumWheels(newNumWheels);
 }
 
 void Vehicles::Workshop::ReplaceWheels(double newWheelDiameter)
 {
 	std::cout << "Attempting to REPLACE WHEELS..." << std::endl;
 
-	if (m_WorkingVehicle)
-	{
-		m_WorkingVehicle->ReplaceWheels(newWheelDiameter);
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
-	}
-	else   // Workshop is empty
-	{
+	if (!m_WorkingVehicle) {
 		std::cout << "No Vehicle in Workshop" << std::endl;
+		return;
 	}
+	m_WorkingVehicle->ReplaceWheels(newWheelDiameter);
+	std::cout << "Vehicle Report following work order:" << std::endl;
+	std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
 }
 
 void Vehicles::Workshop::RaiseSuspension(double newHeight)
 {
+	if (!m_WorkingVehicle) {
+		std::cout << "No Vehicle in Workshop" << std::endl;
+		return;
+	}
 	std::cout << "Raising the SUSPENSION..." << std::endl;
 
-	if (m_WorkingVehicle)
-	{
-		m_WorkingVehicle->RaiseSuspension(newHeight);
-		std::cout << "Vehicle Report following work order:" << std::endl;
-		std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
-	}
-	else   // Workshop is empty
-	{
-		std::cout << "No Vehicle in Workshop" << std::endl;
-	}
+	m_WorkingVehicle->RaiseSuspension(newHeight);
+	std::cout << "Vehicle Report following work order:" << std::endl;
+	std::cout << m_WorkingVehicle->VehicleReport() << std::endl;
 }
 
 void Vehicles::Workshop::GoFasterStripes(bool stripes)

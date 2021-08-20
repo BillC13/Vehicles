@@ -18,6 +18,8 @@ namespace Vehicles
 		void ReplaceWheels(double);
 		void RaiseSuspension(double);
 		void GoFasterStripes(bool);
+		virtual void SetNumWheels(int);
+		virtual void SetNumDoors(int);
 
 	protected:  // only I_Vehicle and classes derived from it (such as Car) can access these:
 		std::string m_name;

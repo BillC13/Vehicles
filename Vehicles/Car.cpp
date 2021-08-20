@@ -46,5 +46,12 @@ namespace Vehicles
 	void Car::SetNumDoors(int newNumDoors)
 	{
 		m_doors = newNumDoors;
+		std::cout << "Vehicle Report following work order:" << std::endl;
+		std::cout << VehicleReport() << std::endl;
+	}
+
+	void Car::SetNumWheels(int newNumWheels)
+	{
+		std::cout << "Cannot change the number of wheels on a Car! No work carried out." << std::endl;
 	}
 }
