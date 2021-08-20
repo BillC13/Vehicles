@@ -21,9 +21,5 @@ namespace Vehicles
 		void ReplaceWheels(double);
 		void RaiseSuspension(double);
 		void GoFasterStripes(bool);
-
-		bool WorkingVehicleIsLorry();
-		bool WorkingVehicleIsCar();
-		bool WorkingVehicleIsBike();
 	};
 }

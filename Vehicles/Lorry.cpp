@@ -67,7 +67,10 @@ namespace Vehicles
 		std::cout << "Cannot change the number of doors on a Lorry! No work carried out." << std::endl;
 	}
 
-
-
-
+	void Lorry::SetVehicle()
+	{
+		std::cout << "Lorry Brought into Workshop for work! " << std::endl;
+		std::cout << "Lorry's Vehicle Report:" << std::endl;
+		std::cout << VehicleReport() << std::endl;
+	}
 }

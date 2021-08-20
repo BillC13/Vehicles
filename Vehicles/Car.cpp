@@ -54,4 +54,11 @@ namespace Vehicles
 	{
 		std::cout << "Cannot change the number of wheels on a Car! No work carried out." << std::endl;
 	}
+
+	void Car::SetVehicle()
+	{
+		std::cout << "Car Brought into Workshop for work! " << std::endl;
+		std::cout << "Car's Vehicle Report:" << std::endl;
+		std::cout << VehicleReport() << std::endl;
+	}
 }

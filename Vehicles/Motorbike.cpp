@@ -63,6 +63,13 @@ namespace Vehicles
 	{
 		std::cout << "There are no doors on a motorbike! No work carried out." << std::endl;
 	}
+
+	void Bike::SetVehicle()
+	{
+		std::cout << "Bike Brought into Workshop for work! " << std::endl;
+		std::cout << "Bike's Vehicle Report:" << std::endl;
+		std::cout << VehicleReport() << std::endl;
+	}
 }
 
 

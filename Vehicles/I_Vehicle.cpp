@@ -27,6 +27,11 @@ void Vehicles::I_Vehicle::SetNumDoors(int newNumDoors)
 	std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
 }
 
+void Vehicles::I_Vehicle::SetVehicle()
+{
+	std::cout << "Unknown Vehicle. No work Carried out." << std::endl;
+}
+
 void Vehicles::I_Vehicle::RaiseSuspension(double newHeight)
 {
 	double currentHeight = m_height;

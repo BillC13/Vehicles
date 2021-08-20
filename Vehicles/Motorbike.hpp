@@ -11,6 +11,7 @@ namespace Vehicles
 		std::string VehicleReport();	// VehicleReport required by I_Vehicle
 		void SetNumWheels(int);
 		void SetNumDoors(int);
+		void SetVehicle();
 	};
 }
 
