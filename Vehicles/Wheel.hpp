@@ -8,6 +8,7 @@ namespace Vehicles
 		
 	public:
 		Wheel(double diameter);		// declare constructor (you must provide a diameter to create a wheel)
+		~Wheel();					// declare a destructor
 		std::string WheelReport();  // declare a function that will tell us about the wheel
 		double GetWheelDiameter() { return m_diameter; }
 	private:

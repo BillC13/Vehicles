@@ -3,7 +3,6 @@
 #include "I_Vehicle.hpp"
 #include "Car.hpp"
 #include "Lorry.hpp"
-#include "Motorbike.hpp"
 
 namespace Vehicles
 {
@@ -19,7 +18,8 @@ namespace Vehicles
 		void ChangeNumberOfDoors(int);
 		void ChangeNumberOfWheels(int);
 		void ReplaceWheels(double);
-		void RaiseSuspension(double);
-		void GoFasterStripes(bool);
+
+		bool WorkingVehicleIsLorry();
+		bool WorkingVehicleIsCar();
 	};
 }

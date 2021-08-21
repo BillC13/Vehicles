@@ -7,7 +7,6 @@
 
 #include "Car.hpp"
 #include "Lorry.hpp"
-#include "Motorbike.hpp"
 #include "I_Vehicle.hpp"
 #include "Workshop.hpp"
 
@@ -35,7 +34,7 @@ int main()
 void runProgram()
 {
      // unique_ptr<Car> P1; 
-    std::unique_ptr<Vehicles::Car> P1(new Vehicles::Car("Tony", 4, 482.6));
+    std::unique_ptr<Vehicles::Car> P1(new Vehicles::Car("Tony's Car", 4, 482.6));
 
     // report on the vehicles:
     std::cout << P1->VehicleReport() << std::endl;
@@ -47,21 +46,19 @@ void runProgram()
     
 
     // unique_ptr<Lorry> P2; 
-    std::unique_ptr<Vehicles::Car> P2(new Vehicles::Car("David", 4, 609.6));
+    std::unique_ptr<Vehicles::Car> P2(new Vehicles::Car("David's car", 4, 609.6));
     P1 = move(P2);
     // report on the vehicles:
     std::cout << P1->VehicleReport() << std::endl;
 
  
-    std::cout << "Moving the Car pointer" << std::endl;
-    //P1.reset();
-    std::shared_ptr<Vehicles::Car> P2a = std::move(P1);
+    std::cout << "Resetting the Car pointer" << std::endl;
+    P1.reset();
 
     //Let us create and share several pointers to a lorry - this method will prevent uncertainty about releasing memory
    
     std::shared_ptr<Vehicles::Lorry> P3 = std::make_shared<Vehicles::Lorry>("Tony", 6, 700.6);
     std::shared_ptr<Vehicles::Lorry> P4 = std::make_shared<Vehicles::Lorry>("David", 3, 50.6);
-    std::shared_ptr<Vehicles::Bike> P9 = std::make_shared<Vehicles::Bike>("Bill", 2, 75.0);
 
     //auto test = std::make_unique<Vehicles::Lorry>("David", 3, 50.6);
 
@@ -77,19 +74,8 @@ void runProgram()
     workshop.ChangeNumberOfWheels(8);
     workshop.ReplaceWheels(300.0);
     // lines below commented out because it won't work with unique_ptr. Homework: Why?
-    workshop.SetWorkingVehicle(P2a);
-    //workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P2a));
-    workshop.ChangeNumberOfDoors(1);
-    workshop.ChangeNumberOfWheels(3);
-    workshop.ReplaceWheels(1000.0);
-    workshop.RaiseSuspension(800.0);
-    workshop.GoFasterStripes(true);
-
-    workshop.SetWorkingVehicle(P9);
-    workshop.ChangeNumberOfWheels(3);
-    workshop.ChangeNumberOfDoors(1);
-    workshop.ReplaceWheels(80.0);
-    workshop.GoFasterStripes(true);
+    //workshop.SetWorkingVehicle(P2);
+    //workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P2));
 
     workshop.SetWorkingVehicle(P3); // can accept a concrete class or an abstract one as below:
     workshop.ChangeNumberOfDoors(2);

@@ -10,8 +10,6 @@ namespace Vehicles
 		~Lorry();							// I'll also provide a destructor for when we dont need the Lorry any more.
 		std::string VehicleReport();	// VehicleReport required by I_Vehicle
 		void SetNumWheels(int);
-		void SetNumDoors(int);
-		void SetVehicle();
 	};
 }
 

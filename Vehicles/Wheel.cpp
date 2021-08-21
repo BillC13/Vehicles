@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Wheel.hpp"
 
 namespace Vehicles
@@ -12,6 +13,12 @@ namespace Vehicles
 		// m_diameter is declared in the header "Wheel.hpp".  "m_" means "member".
 		// the parameter "diameter" is used to set the value of m_diameter.
 		m_diameter = diameter;
+		std::cout << "Wheel of diameter " + std::to_string(m_diameter)  + " was constructed."<< std::endl;
+	}
+
+	Wheel::~Wheel()
+	{
+		std::cout << "Wheel of diameter " + std::to_string(m_diameter) + " was disposed of." << std::endl;
 	}
 
 	//Now I want to implement the WheelReport Function. Notice this function returns a string:
