@@ -1,8 +1,5 @@
 ﻿  Car.cpp
-  I_Vehicle.cpp
   Lorry.cpp
-  Vehicles.cpp
-  Wheel.cpp
-  Workshop.cpp
   Generating Code...
-  Vehicles.vcxproj -> C:\Users\bill_\source\repos\Vehicles4\Vehicles_DO_MKSH_Workshop_Actions_Dyn_Wheels\Vehicles\x64\Debug\Vehicles.exe
+  LINK : C:\Users\bill_\source\repos\Vehicles\x64\Debug\Vehicles.exe not found or not built by the last incremental link; performing full link
+  Vehicles.vcxproj -> C:\Users\bill_\source\repos\Vehicles\x64\Debug\Vehicles.exe

@@ -40,11 +40,7 @@ namespace Vehicles
 		report += "  Width:  " + std::to_string(m_width) + "\n";
 		report += "  Height: " + std::to_string(m_height) + "\n";
 		report += "  Number of wheels: " + std::to_string(m_wheels.size()) + "\n";
-		for (unsigned int i = 0; i < m_wheels.size(); i++)
-		{
-			report += "  #" + std::to_string(i + 1) + ": " + m_wheels[i]->WheelReport();
-		}
-
+		report += "  " + m_wheels[0]->WheelReport();
 		return report;
 	}
 
@@ -56,11 +52,14 @@ namespace Vehicles
 			newNumWheels = 4;
 		}
 		double currentWheelDiameter = m_wheels[0]->GetWheelDiameter(); //get diameter from first existing wheel
+		std::cout << m_wheels.size() << " wheels of diameter " << std::to_string(currentWheelDiameter) << " were disposed of." << std::endl;
 		m_wheels.clear();
 		for (int i = 0; i < newNumWheels; i++)
 		{
 			m_wheels.push_back(std::make_shared<Vehicles::Wheel>(currentWheelDiameter)); //create a wheel and add it to the vector of wheels
 		}
+		std::cout << newNumWheels << " wheels of diameter " << std::to_string(currentWheelDiameter) << " were constructed." << std::endl;
+
 	}
 
 
