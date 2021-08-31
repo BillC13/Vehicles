@@ -59,6 +59,7 @@ void runProgram()
    
     std::shared_ptr<Vehicles::Lorry> P3 = std::make_shared<Vehicles::Lorry>("Tony", 6, 700.6);
     std::shared_ptr<Vehicles::Lorry> P4 = std::make_shared<Vehicles::Lorry>("David", 3, 50.6);
+    std::shared_ptr<Vehicles::Bike> P6 = std::make_shared<Vehicles::Bike>("Bill", 2, 60);
 
     //auto test = std::make_unique<Vehicles::Lorry>("David", 3, 50.6);
 
@@ -72,7 +73,12 @@ void runProgram()
     Vehicles::Workshop workshop;
     workshop.ChangeNumberOfDoors(2);
     workshop.ChangeNumberOfWheels(8);
-    workshop.ReplaceWheels(300.0);
+    workshop.ChangeWheels(650.0);
+    workshop.ChangeNumberOfDoors(1);
+    workshop.ChangeNumberOfWheels(3);
+    workshop.ChangeWheels(1000.0);
+    workshop.RaiseSuspension(800.0);
+    workshop.GoFasterStripes(true);
     // lines below commented out because it won't work with unique_ptr. Homework: Why?
     //workshop.SetWorkingVehicle(P2);
     //workshop.SetWorkingVehicle(std::dynamic_pointer_cast<Vehicles::I_Vehicle> (P2));
@@ -80,14 +86,22 @@ void runProgram()
     workshop.SetWorkingVehicle(P3); // can accept a concrete class or an abstract one as below:
     workshop.ChangeNumberOfDoors(2);
     workshop.ChangeNumberOfWheels(8);
-    workshop.ReplaceWheels(650.0);
+    workshop.ChangeWheels(650.0);
 
     std::shared_ptr<Vehicles::Car> P5 = std::make_shared<Vehicles::Car>("Luke", 4, 500.0);
     workshop.SetWorkingVehicle(P5);
     workshop.ChangeNumberOfDoors(2);
     workshop.ChangeNumberOfWheels(8);
-    workshop.ReplaceWheels(450.0);
+    workshop.ChangeWheels(650.0);
 
+    workshop.SetWorkingVehicle(P6); // can accept a concrete class or an abstract one as below:
+    workshop.ChangeNumberOfDoors(2);
+    workshop.ChangeNumberOfWheels(8);
+    workshop.ChangeWheels(650.0);
+    workshop.ChangeNumberOfDoors(1);
+    workshop.ChangeNumberOfWheels(3);
+    workshop.ChangeWheels(650.0);
+    workshop.RaiseSuspension(800.0);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

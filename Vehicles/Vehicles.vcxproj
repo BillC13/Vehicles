@@ -150,6 +150,7 @@
     <ClCompile Include="Car.cpp" />
     <ClCompile Include="I_Vehicle.cpp" />
     <ClCompile Include="Lorry.cpp" />
+    <ClCompile Include="Motorbike.cpp" />
     <ClCompile Include="Vehicles.cpp" />
     <ClCompile Include="Wheel.cpp" />
     <ClCompile Include="Workshop.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="Car.hpp" />
     <ClInclude Include="I_Vehicle.hpp" />
     <ClInclude Include="Lorry.hpp" />
+    <ClInclude Include="Motorbike.hpp" />
     <ClInclude Include="Wheel.hpp" />
     <ClInclude Include="Workshop.hpp" />
   </ItemGroup>

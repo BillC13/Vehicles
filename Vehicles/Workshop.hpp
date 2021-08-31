@@ -3,6 +3,7 @@
 #include "I_Vehicle.hpp"
 #include "Car.hpp"
 #include "Lorry.hpp"
+#include "Motorbike.hpp"
 
 namespace Vehicles
 {
@@ -17,9 +18,8 @@ namespace Vehicles
 		void SetWorkingVehicle(std::shared_ptr<Vehicles::I_Vehicle>);
 		void ChangeNumberOfDoors(int);
 		void ChangeNumberOfWheels(int);
-		void ReplaceWheels(double);
-
-		bool WorkingVehicleIsLorry();
-		bool WorkingVehicleIsCar();
+		void ChangeWheels(double);
+		void RaiseSuspension(double);
+		void GoFasterStripes(bool);
 	};
 }

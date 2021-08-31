@@ -13,19 +13,19 @@ namespace Vehicles
 		// m_diameter is declared in the header "Wheel.hpp".  "m_" means "member".
 		// the parameter "diameter" is used to set the value of m_diameter.
 		m_diameter = diameter;
-		//std::cout << "Wheel of diameter " + std::to_string(m_diameter)  + " was constructed."<< std::endl;
+		std::cout << "Wheel of diameter " + std::to_string(m_diameter)  + " was constructed."<< std::endl;
 	}
 
 	Wheel::~Wheel()
 	{
-		//std::cout << "Wheel of diameter " + std::to_string(m_diameter) + " was disposed of." << std::endl;
+		std::cout << "Wheel of diameter " + std::to_string(m_diameter) + " was disposed of." << std::endl;
 	}
 
 	//Now I want to implement the WheelReport Function. Notice this function returns a string:
 
 	std::string Wheel::WheelReport()
 	{
-		std::string report = "Wheel diameter: " + std::to_string(m_diameter) + "\n";
+		std::string report = "Diameter: " + std::to_string(m_diameter) + "\n";
 		// note you must convert the double to a string to add it to another string as above.
 		return report;
 	}
