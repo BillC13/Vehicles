@@ -14,7 +14,7 @@ namespace Vehicles
 			no_wheels = 2;
 		} else if (no_wheels > 4)
 		{
-			std::cout << "Cannot have more than 4 Wheels! Bike has 4 Wheels." << std::endl;
+			std::cout << "Cannot have more than 4 Wheels! Bike is quadbike!" << std::endl;
 			no_wheels = 4;
 		}
 
@@ -80,6 +80,11 @@ namespace Vehicles
 		{
 			std::cout << "Vehicle had missing wheels! Fitting 2 Wheels." << std::endl;
 			currentNumWheels = 2;
+		}
+		else if (currentNumWheels > 4)
+		{
+			std::cout << "Cannot have more than 4 Wheels! Bike is now quadbike!" << std::endl;
+			currentNumWheels = 4;
 		}
 
 		m_wheels.clear();

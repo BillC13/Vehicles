@@ -48,6 +48,7 @@ void Vehicles::Workshop::ChangeWheels(double newWheelDiameter)
 	if (!m_WorkingVehicle)
 	{
 		std::cout << "No Vehicle in Workshop" << std::endl;
+		return;
 	}
 	else
 	{
